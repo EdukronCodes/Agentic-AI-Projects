@@ -69,3 +69,9 @@ def analyze(request: AnalyzeRequest) -> dict:
 @app.get("/health")
 def health() -> dict:
     return {"status": "ok"}
+
+
+if __name__ == "__main__":
+    import uvicorn
+
+    uvicorn.run("mcp_server:app", host="0.0.0.0", port=8000, reload=True)
