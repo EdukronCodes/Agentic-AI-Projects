@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prescription Analyzer</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Prescription Analyzer</h1>
+      <p>Upload or paste a prescription text and choose an analysis agent.</p>
+    </header>
+
+    <main>
+      <section class="panel">
+        <label for="prescription">Prescription text</label>
+        <textarea id="prescription" placeholder="Paste prescription text here"></textarea>
+
+        <div class="row">
+          <label for="agent">Select agent</label>
+          <select id="agent"></select>
+          <button id="all" type="button">Run all agents</button>
+        </div>
+
+        <button id="analyze" type="button">Analyze</button>
+
+        <div id="status" aria-live="polite"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Results</h2>
+        <pre id="results" class="results"></pre>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
