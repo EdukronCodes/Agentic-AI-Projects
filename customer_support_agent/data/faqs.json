@@ -1,0 +1,5 @@
+[
+  {"id": "faq1", "question": "What is your return policy?", "answer": "We accept returns within 30 days of delivery with a receipt."},
+  {"id": "faq2", "question": "How do I reset my password?", "answer": "Go to 'Account Settings' and click 'Reset Password'. You'll receive an email with instructions."},
+  {"id": "faq3", "question": "Do you ship internationally?", "answer": "Yes, we ship to most countries. Shipping fees vary by location."}
+]
