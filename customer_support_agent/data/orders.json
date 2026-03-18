@@ -1,5 +1,8 @@
 [
   {"order_id": "1001", "status": "Shipped", "items": ["Wireless Mouse", "Laptop Sleeve"], "estimated_delivery": "2026-03-25"},
   {"order_id": "1002", "status": "Processing", "items": ["Noise Cancelling Headphones"], "estimated_delivery": "2026-04-01"},
-  {"order_id": "1003", "status": "Delivered", "items": ["Mechanical Keyboard"], "estimated_delivery": "2026-03-10"}
+  {"order_id": "1003", "status": "Delivered", "items": ["Mechanical Keyboard"], "estimated_delivery": "2026-03-10"},
+  {"order_id": "1004", "status": "Delayed", "items": ["4K Monitor"], "estimated_delivery": "2026-04-05", "delay_reason": "Carrier weather delay"},
+  {"order_id": "1005", "status": "Cancelled", "items": ["USB-C Dock"], "estimated_delivery": "N/A", "cancel_reason": "Customer requested cancellation"},
+  {"order_id": "1006", "status": "Ready for Pickup", "items": ["Gaming Chair"], "estimated_delivery": "2026-03-22"}
 ]

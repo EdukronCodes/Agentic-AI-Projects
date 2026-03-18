@@ -32,6 +32,22 @@ class ChatResponse(BaseModel):
     metadata: dict
 
 
+class MatchRequest(BaseModel):
+    query: str
+    top_k: int = 4
+
+
+class MatchResult(BaseModel):
+    rank: int
+    content: str
+    metadata: dict
+
+
+class MatchResponse(BaseModel):
+    query: str
+    matches: list[MatchResult]
+
+
 @app.get("/health")
 def health_check() -> dict:
     return {"status": "ok", "message": "Service is running"}
@@ -57,3 +73,13 @@ def chat_endpoint(request: ChatRequest):
             "reason": result.get("reason"),
         },
     )
+
+
+@app.post("/match", response_model=MatchResponse)
+def match_endpoint(request: MatchRequest):
+    if not request.query.strip():
+        raise HTTPException(status_code=400, detail="query is required")
+
+    matches = orchestrator.rag.retrieve_matches(request.query, k=request.top_k)
+
+    return MatchResponse(query=request.query, matches=[MatchResult(**m) for m in matches])

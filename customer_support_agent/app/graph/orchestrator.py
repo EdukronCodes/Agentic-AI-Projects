@@ -7,7 +7,7 @@ except ImportError:
     Graph = None
     Node = None
 
-from app.agents.specialized_agents import (
+from app.agents import (
     AccountManagementAgent,
     BillingAgent,
     ComplaintHandlingAgent,

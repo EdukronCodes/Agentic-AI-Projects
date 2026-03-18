@@ -65,6 +65,19 @@ class RAGPipeline:
         hits = self.retriever.get_relevant_documents(query)
         return "\n".join([f"{i+1}. {doc.page_content}" for i, doc in enumerate(hits)])
 
+    def retrieve_matches(self, query: str, k: int = 4):
+        if not self.retriever:
+            raise RuntimeError("Retriever not initialized")
+        hits = self.retriever.get_relevant_documents(query, k=k)
+        return [
+            {
+                "rank": i + 1,
+                "content": doc.page_content,
+                "metadata": doc.metadata,
+            }
+            for i, doc in enumerate(hits)
+        ]
+
     def answer_with_context(self, query: str) -> str:
         llm = OpenAI(openai_api_key=OPENAI_API_KEY, temperature=0.2)
         chain = RetrievalQA.from_chain_type(

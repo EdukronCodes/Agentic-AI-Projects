@@ -42,6 +42,7 @@ python main.py
 ## Endpoints
 - `GET /health` - health check
 - `POST /chat` - request body `{ "query": "..." }`
+- `POST /match` - request body `{ "query": "...", "top_k": 3 }` to retrieve matching knowledge artifacts
 
 ## Example query
 ```bash
